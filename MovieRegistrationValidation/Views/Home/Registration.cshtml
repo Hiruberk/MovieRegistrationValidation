@@ -1,0 +1,22 @@
+﻿@model Movie
+<form method="post">
+    <h2>Movie Registration</h2>
+    <p>Please enter the following fields to register your movie!</p><br />
+
+    <input type="text" id="title" name="Title" maxlength="50" required />
+    <label for="title">Title (No more than 50 characters)</label>
+    <br />
+    <select asp-for="Genre" asp-items="@Html.GetEnumSelectList<GenreType>()"></select>
+    <label for="genre">Genre</label>
+    <br />
+    <input type="number" id="year" name="Year" min="1880" max="2021" required />
+    <label for="year">Year of release</label>
+    <br />
+    <input type="text" id="actors" name="Actors" required />
+    <label for="actors">Starring Actors</label>
+    <br />
+    <input type="text" id="directors" name="Directors" required />
+    <label for="directors">Directors</label>
+    <br />
+    <input type="submit" value="Register" />
+</form>
